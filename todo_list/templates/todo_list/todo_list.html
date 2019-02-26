@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% if messages %}
+    {% for message in messages %}
+        <di class="alert alert-warning alert-dissmissable" role="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>x</sup></small>
+            </button>
+            {{ message }}
+        </di>
+    {% endfor %}
+
+    {% endif %}
+{% if itens %}
+
+    <table class="table table-bordered">
+    {% for item in itens %}
+        {%if item.concluido %}
+        <tr class="table-secondary">
+            <td><a href="{% url 'edita-todo' item.id%}">{{ item.item }}</a></td>
+            <td><center><a class="far fa-check-square" href="{% url 'nao-concluido' item.id %}"></a></center></td>
+            <td><center><a class="fas fa-trash-alt" href="{% url 'deleta-todo' item.id%}"></a></center></td>
+        </tr>
+        {% else %}
+        <tr>
+            <td><a href="{% url 'edita-todo' item.id%}">{{ item.item }}</a></td>
+            <td><center><a class="far fa-square" href="{% url 'conclui-todo' item.id %}"></a></center></td>
+            <td><center><a class="fas fa-trash-alt" href="{% url 'deleta-todo' item.id%}"></a></center></td>
+        </tr>
+        {% endif %}
+
+    {% endfor %}
+    </table>
+
+
+{% endif %}
+
+{% endblock %}
