@@ -1,0 +1,177 @@
+{
+	"id": "c24e4377-d11d-41ab-895b-91048eb474a3",
+	"name": "Todo Collection",
+	"allTests": [],
+	"timestamp": "2019-02-27T22:42:36.381Z",
+	"collection_id": "d5967509-1387-40b1-a61a-f593b1567e56",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "d2fb00c2-d1b3-4847-a9be-ea36996e0d3f",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "d5967509-1387-40b1-a61a-f593b1567e56",
+		"name": "Todo Collection",
+		"description": "",
+		"auth": {
+			"type": "bearer",
+			"bearer": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTUxMzA0NzEyLCJqdGkiOiIzMDFhYWI1MGE0YmY0MTgyYTVkZWU5OGRjNDExZjcwMiIsInVzZXJfaWQiOjh9.YLJazaiiX5tVz93TXFs_IiU0m82LPGyDfu5kFBPZqc4"
+				}
+			]
+		},
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "db5b5d33-7b09-4c62-817a-8d8655f03a47",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "11238687-950f-40d7-bdc3-98e9ee3fde4e",
+					"type": "text/javascript",
+					"exec": [
+						"tests['Status code retornado foi 200'] = responseCode.code === 200;"
+					]
+				}
+			}
+		],
+		"variables": [],
+		"order": [
+			"b177bb46-7c57-44a4-a90b-88cbf8311217"
+		],
+		"folders_order": [],
+		"owner": "0",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": null,
+	"results": [
+		{
+			"name": "localhost:8000/api/lista-todo/",
+			"id": "b177bb46-7c57-44a4-a90b-88cbf8311217",
+			"url": "localhost:8000/api/lista-todo/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Status code retornado foi 200",
+				"status": "pass",
+				"Tempo de resposta é menor que 200ms": true,
+				"Status code is 200": true,
+				"Body contem string: id": true,
+				"Body contem string: usuario": true,
+				"Body contem string: item": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Tempo de resposta é menor que 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contem string: id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contem string: usuario": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contem string: item": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"9"
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 200": true,
+					"Tempo de resposta é menor que 200ms": true,
+					"Status code is 200": true,
+					"Body contem string: id": true,
+					"Body contem string: usuario": true,
+					"Body contem string: item": true
+				}
+			],
+			"time": "9",
+			"totalRequestTime": "9",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 6,
+	"totalFail": 0,
+	"totalTime": 9,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "localhost:8000/api/lista-todo/",
+			"id": "b177bb46-7c57-44a4-a90b-88cbf8311217",
+			"url": "localhost:8000/api/lista-todo/",
+			"time": "2019-02-27T22:42:36.381Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Tempo de resposta é menor que 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contem string: id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contem string: usuario": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contem string: item": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}

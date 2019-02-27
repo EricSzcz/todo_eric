@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "d5967509-1387-40b1-a61a-f593b1567e56",
+		"name": "Todo Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/api/lista-todo/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74a8cece-ce87-4254-9686-6568c2792292",
+						"exec": [
+							"tests[\"Tempo de resposta é menor que 200ms\"] = responseTime < 200;",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var expected = \"id\"",
+							"tests[\"Body contem string: \" + expected] = responseBody.has(expected);",
+							"",
+							"var expected = \"usuario\"",
+							"tests[\"Body contem string: \" + expected] = responseBody.has(expected);",
+							"",
+							"var expected = \"item\"",
+							"tests[\"Body contem string: \" + expected] = responseBody.has(expected);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTUxMzA3NDQ3LCJqdGkiOiJmYjM0NzAzMjY3Nzk0NjA0ODVhNDI0ODZmMzIyNmZiNSIsInVzZXJfaWQiOjh9.bjIqGAbpT7P53js2ehBRDUDo-byW9aWJD85sovY2Sj4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/api/lista-todo/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lista-todo",
+						""
+					]
+				},
+				"description": "Verifica Status code"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTUxMzA0NzEyLCJqdGkiOiIzMDFhYWI1MGE0YmY0MTgyYTVkZWU5OGRjNDExZjcwMiIsInVzZXJfaWQiOjh9.YLJazaiiX5tVz93TXFs_IiU0m82LPGyDfu5kFBPZqc4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "db5b5d33-7b09-4c62-817a-8d8655f03a47",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "11238687-950f-40d7-bdc3-98e9ee3fde4e",
+				"type": "text/javascript",
+				"exec": [
+					"tests['Status code retornado foi 200'] = responseCode.code === 200;"
+				]
+			}
+		}
+	]
+}
