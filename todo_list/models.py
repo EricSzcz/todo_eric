@@ -4,9 +4,9 @@ from django.conf import settings
 """
 Classe de definição do modelo de dados, da lista de itens do to-do.
 
-usuario   = ID do usuario que está logado no sistema.
+usuario   = ID do usuário que está logado no sistema.
 item      = Descrição da tarefa a ser realizada.
-concluido = Campo booleano que pode ser verdeiro se a tarefa foi concluida ou falso se ainda não. 
+concluido = Campo booleano que pode ser verdadeiro se a tarefa foi concluída ou falso se ainda não. 
 """
 
 

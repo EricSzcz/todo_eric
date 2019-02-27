@@ -5,14 +5,14 @@ from .models import Lista
 """
 Classe de definição do form da lista de to-do's.
 
-No primeiro metodo foi definido construtor da classe para incluir o usuario logado no sistema no form.
+No primeiro metodo foi definido o construtor da classe para incluír o usuário logado no sistema no form.
 
-O segundo metodo salva a instancia do form com od dados que foram informados pelo usuario e seu ID de usuario,
-desta forma não é necessario incluir um campo de usuario no formulario para depois ser coletado, evitando assim
-que algum usuario mal intencionado possa inspecionar os elementos da pagina e trocar o ID do usuario salvando
-informações em outros usuarios.
+O segundo metodo salva a instância do form com os dados que foram informados pelo usuário e seu ID de usuário,
+desta forma não é necessário incluír um campo de usuário no formulario para depois ser coletado, evitando assim
+que algum usuário mal intencionado possa inspecionar os elementos da página e trocar o ID do usuário salvando
+informações na to-do list de outro usuário.
 
-Por ultimo uma classe Meta para enviar os campos do model para o form.
+Por último uma classe Meta para enviar os campos do model para o form.
 """
 
 

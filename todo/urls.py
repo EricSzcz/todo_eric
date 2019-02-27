@@ -22,11 +22,11 @@ from todo_list.api.viewsets import UserViewSet
 from usuario import urls as usuario_urls
 
 router = routers.DefaultRouter()
-router.register(r'todo-list', UserViewSet, base_name='todo-list')
+router.register(r'lista-todo', UserViewSet, base_name='lista-todo')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo-list/', include(todo_list_urls)),
+    path('lista-todo/', include(todo_list_urls)),
     path('', include(usuario_urls)),
     path('api/', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view()),

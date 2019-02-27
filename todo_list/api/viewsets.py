@@ -1,7 +1,13 @@
-#from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework.viewsets import ModelViewSet
 from todo_list.models import Lista
 from .serializers import TodoListSerializer
+
+
+"""
+Classe para responder as requisições dos endpoints da API
+Recebe a classe de serialização.
+Sobreescreve o Metodo GET para retornar somente os dados respectivos do usuário que fez a requisição. 
+"""
 
 
 class UserViewSet(ModelViewSet):

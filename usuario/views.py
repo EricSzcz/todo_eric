@@ -5,10 +5,22 @@ from django.views.generic import View
 from django.contrib.auth.models import User
 
 
+"""
+Classe para logar no sistema.
+Metodo GET verifica se o usuário já está logado no sistema, se sim redireciona para a sua lista de to-do
+senão direciona para a tela de login
+
+Metodo POST recebe o email do usuáriov consulta no objeto User do django
+Cria variável para login com o usuário e senha.
+Se variável é válida loga no sistema e redireciona para sua lista de to-do
+senão mantem na tela de login
+"""
+
+
 class Login(View):
     def get(self, request):
         if request.user.is_authenticated:
-            return HttpResponseRedirect('todo-list')
+            return redirect('lista-todo')
         else:
             return render(request, 'usuario/login.html')
 
@@ -18,10 +30,20 @@ class Login(View):
 
         if usuario is not None:
             login(request, usuario)
-            return HttpResponseRedirect('todo-list')
+            return HttpResponseRedirect('lista-todo')
 
         return HttpResponseRedirect('/')
 
+
+"""
+Classe para cadastrar novo usuário.
+Metodo GET retorna a tela de cadastro.
+
+Metodo POST recebe o email informado e verifica se o mesmo já foi cadastrado no sistema.
+Se já existe retorna um aviso para o usuário.
+Senão cadastra o novo usuário com dados que foram informados.
+Após cadastro já loga no sistema e redireciona para a tela de cadastro dos to-do's
+"""
 
 
 class Cadastro(View):
@@ -46,5 +68,5 @@ class Cadastro(View):
             usuario = authenticate(username=nome_usuario, password=senha)
 
             login(request, usuario)
-            return redirect('todo-list')
+            return redirect('lista-todo')
 

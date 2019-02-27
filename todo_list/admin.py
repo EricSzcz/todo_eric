@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Lista
 
 """
-Classe de inclusão de campos na pagina de adminsitrador do Django,
-estão sendo atualmente incluidos os campos id, usuario, item e concluido
+Classe de inclusão de campos na página de administrador do Django,
+estão sendo atualmente incluídos os campos id, usuario, item e concluido
 """
 
 

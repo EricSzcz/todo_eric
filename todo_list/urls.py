@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import TodoList, NovoTodo, DeletaTodo, EditaTodo, SetarConcluido, SetarNaoConcluido, Sair
+from .views import ListaTodo, NovoTodo, DeletaTodo, EditaTodo, SetarConcluido, SetarNaoConcluido, Sair
 
 urlpatterns = [
-    path('', TodoList.as_view(), name="todo-list"),
+    path('', ListaTodo.as_view(), name="lista-todo"),
     path('novo-todo', NovoTodo.as_view(), name="novo-todo"),
     path('deleta-todo/<int:item_id>/', DeletaTodo.as_view(), name="deleta-todo"),
     path('edita-todo/<int:item_id>/', EditaTodo.as_view(), name="edita-todo"),
