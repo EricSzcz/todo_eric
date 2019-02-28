@@ -15,6 +15,8 @@ virtualenv = "==16.4.1"
 virtualenv-clone = "==0.5.1"
 Django = "==2.1.7"
 PyJWT = "==1.7.1"
+python-decouple = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.6"
