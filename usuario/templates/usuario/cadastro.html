@@ -1,20 +1,20 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block main %}
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+     <!-- Bootstrap CSS Tela Cadastro -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/sign-in/signin.css" rel="stylesheet">
 </head>
-<body>
-    <h1> Cadastro</h1>
-    <form method="post" action="{% url 'cadastro' %}">
-        {% csrf_token %}
-        <input type="text" placeholder="Nome" name="nome-usuario"><br>
-        <input type="text" placeholder="email" name="email"><br>
-        <input type="text" placeholder="senha" name="senha"><br>
-        <button type="submit">Salvar</button>
+
+    <form class="form-signin" method="post" action="{% url 'cadastro' %}">
+      {% csrf_token %}
+      <h1 class="h3 mb-3 font-weight-normal">Cadastro</h1>
+      <label for="inputNome" class="sr-only">Nome</label>
+      <input type="text" name="nome-usuario" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Salvar</button>
     </form>
-</body>
-</html>
+{% endblock %}
