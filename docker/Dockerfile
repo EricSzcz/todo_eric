@@ -5,9 +5,8 @@ ENV PYTHONBUFFERED 1
 RUN mkdir /app
 WORKDIR /app
 
-COPY ../ /app
+ADD ./todo_eric /app/
 
-RUN pipenv install /app/Pipfile
+RUN pip3 install -r /app/docker/requirements.txt
 
-RUN adduser -D user
-USER user
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
