@@ -13,7 +13,7 @@ senão direciona para a tela de login
 Metodo POST recebe o email do usuáriov consulta no objeto User do django
 Cria variável para login com o usuário e senha.
 Se variável é válida loga no sistema e redireciona para sua lista de to-do
-senão mantem na tela de login
+senão mantem na tela de login e avisa sobre usuário não cadastrado ou senha inválida
 """
 
 
@@ -25,14 +25,22 @@ class Login(View):
             return render(request, 'usuario/login.html')
 
     def post(self, request):
-        usuario_aux = User.objects.get(email=request.POST['email'])
-        usuario = authenticate(username=usuario_aux.username, password=request.POST['senha'])
+        try:
+            usuario_aux = User.objects.get(email=request.POST['email'])
+            usuario = authenticate(username=usuario_aux.username, password=request.POST['senha'])
 
-        if usuario is not None:
-            login(request, usuario)
-            return HttpResponseRedirect('lista-todo')
+            if usuario is not None:
+                login(request, usuario)
+                return HttpResponseRedirect('lista-todo')
+            else:
+                message_senha = True
+                return render(request, 'usuario/login.html',
+                              {'message_senha': message_senha})
 
-        return HttpResponseRedirect('/')
+        except User.DoesNotExist:
+            message_usuario = True
+            return render(request, 'usuario/login.html',
+                          {'message_usuario': message_usuario})
 
 
 """

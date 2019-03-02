@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6b280b984771ef9c8a846de84c5674f2cad6a3eeaf2d0a231eddbf6554371311"
+            "sha256": "9f22be47540e2a1b381ed53c4ed820da66f6e90b11e3e8bb297020262d661cba"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -65,6 +65,13 @@
             "index": "pypi",
             "version": "==2018.11.26"
         },
+        "pipfile": {
+            "hashes": [
+                "sha256:f7d9f15de8b660986557eb3cc5391aa1a16207ac41bc378d03f414762d36c984"
+            ],
+            "index": "pypi",
+            "version": "==0.0.2"
+        },
         "pyjwt": {
             "hashes": [
                 "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e",
@@ -87,6 +94,13 @@
             ],
             "index": "pypi",
             "version": "==2018.9"
+        },
+        "toml": {
+            "hashes": [
+                "sha256:229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c",
+                "sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"
+            ],
+            "version": "==0.10.0"
         },
         "virtualenv": {
             "hashes": [

@@ -17,6 +17,7 @@ Django = "==2.1.7"
 PyJWT = "==1.7.1"
 python-decouple = "*"
 dj-database-url = "*"
+pipfile = "*"
 
 [requires]
 python_version = "3.6"
