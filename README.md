@@ -1,45 +1,66 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+**Projeto To do**
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Segue abaixo algumas instruções para executar o projeto To do em seu ambiente 
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+**Recomendações**
 
----
+Instale um ambiente virtual(virtualenv) para executar a aplicação
+e a instalação de suas dependências.
 
-## Edit a file
+Para criar sua virtualenv execute o seguinte comando:
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+    python3 -m venv "nome_da_virtualenv"  
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+**Instalação da aplicação**
 
----
+Após criada sua virtualenv você pode clonar o projeto para o mesmo diretório
+ao lado da sua virtualenv. (exemplo: virtualenv todo_eric)
 
-## Create a file
+Replique o repositório com o seguinte comando:
 
-Next, you’ll add a new file to this repository.
+    git clone https://EricSzcz@bitbucket.org/EricSzcz/todo_eric.git
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+Caso você siga nossa recomendação neste momento é necessário ativar sua virtualenv para realizar a instalação das dependências, ative sua virtualenv executando o seguinte comando:
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+    source ./virtualenv/bin/activate
 
----
+Após isso poderá instalar as dependências do projeto com o pipenv 
 
-## Clone a repository
+Caso não tenha o pipenv instalado use o comando
+`pip3 install pipenv` para instalação
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+Em seguida, siga o passo a passo abaixo para instalação do To do:
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+1. Entre no diretório todo_eric
+2. Execute o comando `pipenv install Pipfile` para que seja instalado as dependências do projeto
+3. Execute o comando `python manage.py migrate` para criar os arquivos de banco de dados
+4. (Opcional) Crie um usuário administrador com o comando `python manage.py createsuperuser`
+5. Execute o comando  `python manage.py makemigrations` criando assim o arquivo de migration da lista de todo's
+6. Execute novamente o comando `python manage.py migrate` para criar o model da lista de todo's
+7. Execute o comando `python manage.py runserver` para execução da aplicação
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Após execução dos passos acima a aplicaçao estará rodando em:
+
+    localhost:8000
+
+**Instância Docker da aplicação**
+
+**Recomendações**
+
+Antes de iniciar a aplicação via container Docker,
+execute os passo 1 e 2 abaixo para ter certeza que a aplicação utilize o banco de dados postgres.
+
+1. Exclua o arquivo `db.sqlite3` que se encontra na raiz do projeto
+2. Exclua o arquivo de migrations que se encontra em `todo_list/migrations/*_initial.py`
+
+**Execução**
+
+Para executar a aplicação via docker siga os seguintes passos:
+
+1. Execute o comando `docker-compose build` na raiz do projeto para ciar o container com a aplicação e suas dependências.
+2. Execute o comando `docker-compose up` também na raiz do projeto para executar o container e subir a aplicação.
+
+Após execução dos passos acima a aplicação estará rodando em:
+
+    localhost:8000
+
