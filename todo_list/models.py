@@ -11,7 +11,8 @@ concluido = Campo booleano que pode ser verdadeiro se a tarefa foi concluída ou
 
 
 class Lista(models.Model):
-    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                on_delete=models.CASCADE)
     item = models.CharField(max_length=200)
     concluido = models.BooleanField(default=False)
 

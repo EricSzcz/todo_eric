@@ -1,4 +1,5 @@
 from django import forms
+
 from .models import Lista
 
 
@@ -21,7 +22,8 @@ class ListaForm(forms.ModelForm):
         self._user = kwargs.pop('user')
         super().__init__(*args, **kwargs)
 
-    def save(self, commit=True):
+    def save(self,
+             commit=True):
         instance = super().save(commit=False)
         instance.usuario = self._user
         if commit:

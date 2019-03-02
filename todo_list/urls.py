@@ -1,4 +1,5 @@
 from django.urls import path
+
 from .views import ListaTodo, NovoTodo, DeletaTodo, EditaTodo, SetarConcluido, SetarNaoConcluido, Sair
 
 urlpatterns = [
