@@ -64,3 +64,37 @@ Após execução dos passos acima a aplicação estará rodando em:
 
     localhost:8000
 
+**Rest API**
+
+**Recomendações**
+
+É recomendado o uso de um cliente REST como por exemplo o `Postman`
+
+**Utilização**
+
+Após criar seu usuário na aplicação você pode consumir a API usando o cliente postman,
+basta inserir seu usuário e senha como parametros na aba `Body` como o exemplo abaixo:
+
+| KEY        | VALUE           | 
+| ------------- |:-------------:|
+| username      | seu usuario | 
+| password      | sua senha     
+
+Execute um método POST no seguinte endpoint:
+
+    localhost:8000/api/token/
+    
+Este endpoint irá lhe retornar um  token para autenticação na aplicação, que poderá ser encontrado no item `acess` do arquivo JSON.
+
+Como o exemplo a seguir:
+
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTUxNTM1OTUxLCJqdGkiOiI2NDNkZTVkZTdjZGM0MWVhYWFkYThiZGQxYmJkZTZmMCIsInVzZXJfaWQiOjF9.ksTTVYc0E10FkH7KOlYRzjzaWOBglGn9whA0uMPrvLw"
+  
+Com sua token copiada agora você deve acessar a aba `Authorization` do Postman e selecionar o tipo de autorização
+`Bearer Token` e cole seu token no campo `Token`.
+
+Para acessar o conteúdo do seu usuário na API utilize o método GET do seguinte endpoint:
+
+    localhost:8000/api/lista-todo/
+    
+A API retornará somente os itens da lista de To-do referentes ao seu usuário.
