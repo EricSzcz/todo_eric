@@ -9,7 +9,7 @@ verify_ssl = true
 certifi = "==2018.11.29"
 djangorestframework = "==3.9.1"
 djangorestframework-simplejwt = "==4.0.0"
-pipenv = "==2018.11.26"
+pipenv = "==2022.1.8"
 pytz = "==2018.9"
 virtualenv = "==16.4.1"
 virtualenv-clone = "==0.5.1"
